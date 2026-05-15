@@ -1,0 +1,155 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #120e0a;
+  color: #fff7e8;
+  font-family: Inter, sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+.section {
+  position: relative;
+  overflow: hidden;
+  padding: 104px 0;
+}
+
+.nav-link {
+  position: relative;
+  color: rgba(255, 247, 232, 0.78);
+  transition: color 220ms ease;
+}
+
+.nav-link::after {
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 0;
+  height: 2px;
+  border-radius: 999px;
+  background: #d5a73b;
+  content: "";
+  transition: width 220ms ease;
+}
+
+.nav-link:hover {
+  color: #d5a73b;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.btn-primary,
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  border-radius: 999px;
+  padding: 0.95rem 1.45rem;
+  font-weight: 800;
+  transition: transform 220ms ease, box-shadow 220ms ease, background 220ms ease;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #d5a73b, #fff1b0);
+  color: #120e0a;
+  box-shadow: 0 22px 55px rgba(213, 167, 59, 0.28);
+}
+
+.btn-secondary {
+  border: 1px solid rgba(255, 247, 232, 0.28);
+  background: rgba(255, 247, 232, 0.1);
+  color: #fff7e8;
+  backdrop-filter: blur(16px);
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 24px 70px rgba(213, 167, 59, 0.28);
+}
+
+.input {
+  width: 100%;
+  border-radius: 1.1rem;
+  border: 1px solid rgba(255, 247, 232, 0.16);
+  background: rgba(18, 14, 10, 0.48);
+  padding: 1rem 1.1rem;
+  color: #fff7e8;
+  outline: none;
+  transition: border 180ms ease, box-shadow 180ms ease;
+}
+
+.input:focus {
+  border-color: rgba(213, 167, 59, 0.85);
+  box-shadow: 0 0 0 4px rgba(213, 167, 59, 0.14);
+}
+
+.input::placeholder {
+  color: rgba(255, 247, 232, 0.54);
+}
+
+.social {
+  display: grid;
+  height: 44px;
+  width: 44px;
+  place-items: center;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 247, 232, 0.16);
+  color: #d5a73b;
+  transition: transform 180ms ease, background 180ms ease;
+}
+
+.social:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 247, 232, 0.1);
+}
+
+.particles::before,
+.particles::after {
+  position: absolute;
+  content: "";
+  pointer-events: none;
+  inset: 0;
+  background-image:
+    radial-gradient(circle, rgba(213, 167, 59, 0.32) 1px, transparent 1px),
+    radial-gradient(circle, rgba(255, 247, 232, 0.16) 1px, transparent 1px);
+  background-position: 0 0, 32px 48px;
+  background-size: 90px 90px, 130px 130px;
+  mask-image: linear-gradient(to bottom, transparent, black 18%, transparent 88%);
+  animation: float 10s ease-in-out infinite;
+}
+
+.particles::after {
+  opacity: 0.6;
+  animation-duration: 14s;
+  animation-direction: reverse;
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 78px 0;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    justify-content: center;
+    width: 100%;
+  }
+}
